@@ -1,16 +1,23 @@
-<h1>Cocktail Details</h1>
+  <div class="wrapper">
+    <div class="content container">
+    <h1>Cocktail Details</h1>
 
-<%= @cocktail.name %>
-<ul>
-<% @cocktail.ingredients.each do |ingredient|%> <li><%= ingredient.name %></li>
-<%end%>
-</ul>
+    <p><strong><%= @cocktail.name %></strong></p>
+    <% @cocktail.doses.each do |dose|%>
+    <ul class="list-inline">
+    <li class="list-inline-item">Quantity: <%= dose.description %>,</li>
+    <li class="list-inline-item">Ingredient: <%= dose.ingredient.name %></li>
+    </ul>
+    <%end%>
 
-<p>
-<%= link_to 'Add Doses', new_cocktail_dose_path(@cocktail) %>
-</p>
+    <p>
+    <%= link_to 'Add Doses', new_cocktail_dose_path(@cocktail) %>
+    </p>
 
-<%= link_to 'Back', cocktails_path %>
-</p>
+    <%= link_to 'Back', cocktails_path %>
+    </p>
+  </div>
+</div>
+
 
 

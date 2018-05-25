@@ -6,7 +6,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    raise
   end
 
   def new
